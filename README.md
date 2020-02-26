@@ -1,5 +1,7 @@
 # zanysoft/laravel-zip
 
+> Forked version that works with PHP 7.4
+
 > laravel-zip is the world's leading zip utility for file compression and backup.
 
 This library was written to simplify and automate Zip files management using [PHP ZipArchive](http://php.net/manual/en/class.ziparchive.php).
@@ -32,28 +34,28 @@ use Zip;
 
 - Open zip file:
 
-    ```php    
+    ```php
     $zip = Zip::open('file.zip');
 
     ```
 
 - Create zip file:
 
-    ```php    
+    ```php
     $zip = Zip::create('file.zip');
 
     ```
 
 - Check zip file:
 
-    ```php    
+    ```php
     $is_valid = Zip::check('file.zip');
 
     ```
 
 - Extract zip file:
 
-    ```php    
+    ```php
     // extract whole archive
     $zip->extract('/path/to/uncompressed/files');
 
@@ -64,10 +66,10 @@ use Zip;
     $zip->extract('/path/to/uncompressed/files', array('file1','file2'));
 
     ```
-	
+
 - Check if zip has a file:
 
-    ```php    
+    ```php
     // Check if archive has a file
     $zip->has('/path/to/file/in/archive');
 
@@ -84,7 +86,7 @@ use Zip;
 
 - Add a file/directory to zip:
 
-    ```php    
+    ```php
     $zip->add('/path/to/my/file');
 
     // declaring path
@@ -100,7 +102,7 @@ use Zip;
 
 - Add multiple files/directories to zip:
 
-    ```php    
+    ```php
     // using array as parameter
     $zip->add( array('/path/to/my/file1', '/path/to/my/file2');
 
@@ -114,14 +116,14 @@ use Zip;
 
 - Delete a file/directory from zip:
 
-    ```php    
+    ```php
     $zip->delete('file');
 
     ```
 
 - Delete multiple files/directories from zip:
 
-    ```php    
+    ```php
     // using array as parameter
     $zip->delete( array('file1', 'file2') );
 
@@ -132,14 +134,14 @@ use Zip;
 
 - List content of zip file
 
-    ```php    
+    ```php
     $zip->listFiles();
 
     ```
 
 - Close zip file
 
-    ```php    
+    ```php
     $zip->close();
 
     ```
@@ -148,7 +150,7 @@ use Zip;
 
 - Skip hidden files while adding directories:
 
-    ```php    
+    ```php
     // set mode
     $zip->setSkipped('HIDDEN');
 
@@ -159,7 +161,7 @@ use Zip;
 
 - Use password for zip extraction:
 
-    ```php    
+    ```php
     // set password
     $zip->setPassword('slartibartfast');
 
@@ -170,7 +172,7 @@ use Zip;
 
 - Use a mask != 0777 for created folders:
 
-    ```php    
+    ```php
     // set mask
     $zip->setMask(0644);
 
@@ -193,7 +195,7 @@ use Zip;
 
 - Init the manager and register Zips:
 
-    ```php    
+    ```php
     // init manager
     $manager = new ZipManager();
 
@@ -208,7 +210,7 @@ use Zip;
 
 - Basic zips management:
 
-    ```php    
+    ```php
     // get a list of registered zips
     $list = $manager->listZips();
 
@@ -222,7 +224,7 @@ use Zip;
 
 - Add files to all zips:
 
-    ```php    
+    ```php
     $manager-> = new ZipManager();
 
     // register existing zips
@@ -236,7 +238,7 @@ use Zip;
 
 - Extract zips:
 
-    ```php    
+    ```php
     // separate content in folders
     $extract = $manager->extract('/path/to/uncompressed/files', true);
 
@@ -253,7 +255,7 @@ use Zip;
 
 - Merge zips:
 
-    ```php    
+    ```php
     // separate content in folders
     $manager->merge('/path/to/output/file.zip', true);
 
@@ -264,7 +266,7 @@ use Zip;
 
 - Close zips:
 
-    ```php    
+    ```php
     $manager->close();
 
     ```
@@ -273,7 +275,7 @@ use Zip;
 
 - Declare path from which add files:
 
-    ```php    
+    ```php
     // set path
     $zip->setPath('/path/to/files');
 
@@ -284,7 +286,7 @@ use Zip;
 
 - Use a mask != 0777 for created folders
 
-    ```php    
+    ```php
     // set masks
     $manager->setMask(0644);
 
